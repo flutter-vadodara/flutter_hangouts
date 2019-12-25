@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 8,
           ),
-          _smallScreen?getColumnForSmallScreen():getColumnForLargeScreen(),
+          _smallScreen ? getColumnForSmallScreen() : getColumnForLargeScreen(),
           Container(
             height: MediaQuery.of(context).size.height,
             child: Column(
@@ -83,47 +83,74 @@ class _HomePageState extends State<HomePage> {
 
   Column getColumnForLargeScreen() {
     return Column(
-          children: <Widget>[
-            getPageHeader("ABOUT FLUTTER HANGOUTS"),
-            SizedBox(
-              height: 18,
+      children: <Widget>[
+        getPageHeader("WHY FLUTTER HANGOUTS ?"),
+        SizedBox(
+          height: 18,
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 72, vertical: 24),
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 72, vertical: 24),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 1.85,
+                    child: Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(32),
+                        child: Column(
+                          children: <Widget>[
+                            getCircleLabel("1"),
+                            getAboutText(aboutFirstText),
+                          ],
+                        ),
+                      ),
+                      color: Colors.black26,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 1.65,
+                    child: Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(32),
+                        child: Column(
+                          children: <Widget>[
+                            getCircleLabel("2"),
+                            getAboutText(aboutSecondText),
+                          ],
+                        ),
+                      ),
+                      color: Colors.black26,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 1.85,
+                    child: Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(32),
+                        child: Column(
+                          children: <Widget>[
+                            getCircleLabel("3"),
+                            getAboutText(aboutThirdText),
+                          ],
+                        ),
+                      ),
+                      color: Colors.black26,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 72, vertical: 24),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      getCircleLabel("1"),
-                      getAboutText(aboutFirstText)
-                    ],
-                  ),
-                  SizedBox(
-                    height: 160,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      getAboutText(aboutSecondText),
-                      getCircleLabel("2"),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 160,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      getCircleLabel("3"),
-                      getAboutText(aboutThirdText)
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        );
+          ),
+        )
+      ],
+    );
   }
 
   Container getPageHeader(String title) {
@@ -208,32 +235,74 @@ class _HomePageState extends State<HomePage> {
 
   Column getColumnForSmallScreen() {
     return Column(
-          children: <Widget>[
-            getPageHeader('ABOUT FLUTTER HANGOUTS'),
-            SizedBox(
-              height: 18,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 18, vertical: 24),
-              child: Column(
-                children: <Widget>[
-                  getCircleLabel("1"),
-                  getAboutText(aboutFirstText),
-                  SizedBox(
-                    height: 80,
+      children: <Widget>[
+        getPageHeader('WHY FLUTTER HANGOUTS ?'),
+        SizedBox(
+          height: 18,
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 18, vertical: 24),
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.height / 1.6,
+                child: Card(
+                  elevation: 12,
+                  child: Padding(
+                    padding: EdgeInsets.all(32),
+                    child: Column(
+                      children: <Widget>[
+                        getCircleLabel("1"),
+                        getAboutText(aboutFirstText),
+                      ],
+                    ),
                   ),
-                  getCircleLabel("2"),
-                  getAboutText(aboutSecondText),
-                  SizedBox(
-                    height: 80,
-                  ),
-                  getCircleLabel("3"),
-                  getAboutText(aboutThirdText),
-                ],
+                  color: Colors.black26,
+                ),
               ),
-            )
-          ],
-        );
+              SizedBox(
+                height: 80,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 1.6,
+                child: Card(
+                  elevation: 12,
+                  child: Padding(
+                    padding: EdgeInsets.all(32),
+                    child: Column(
+                      children: <Widget>[
+                        getCircleLabel("2"),
+                        getAboutText(aboutSecondText),
+                      ],
+                    ),
+                  ),
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                height: 80,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 1.6,
+                child: Card(
+                  elevation: 12,
+                  child: Padding(
+                    padding: EdgeInsets.all(32),
+                    child: Column(
+                      children: <Widget>[
+                        getCircleLabel("2"),
+                        getAboutText(aboutSecondText),
+                      ],
+                    ),
+                  ),
+                  color: Colors.black26,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
   }
 
   Expanded getFaqs() {
